@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Cissy and it's Friend</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f0f0f0;
+                color: #333;
+            }
+            canvas {
+                border: 1px solid #666;
+                display: block;
+                margin-bottom: 20px;
+                background-color: #000;
+            }
+            h1, h2 {
+                color: #444;
+            }
+            .controls {
+                margin: 20px 0;
+            }
+            button {
+                padding: 8px 15px;
+                margin-right: 10px;
+                border: none;
+                border-radius: 4px;
+                background-color: #3498db;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            button:hover {
+                background-color: #2980b9;
+            }
+            .slider {
+                width: 200px;
+                margin: 10px 0;
+            }
+            .color-sliders {
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+                margin-bottom: 15px;
+            }
+            .color-sliders label {
+                margin-top: 5px;
+            }
+            .instructions {
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .command-list {
+                columns: 2;
+            }
+        </style>
+    </head>
+
+    <body onload="main()">
+        <h1>Cissy and it's Friend</h1>
+        
+        <canvas id="webgl" width="700" height="700">
+            Please use a browser that supports "canvas"
+        </canvas>
+        
+        <div class="controls">
+            <h2>Lighting Controls</h2>
+            <button id="toggleLighting">Toggle Lighting</button>
+            <button id="toggleNormals">Toggle Normal Visualization</button>
+            <button id="toggleSpotlight">Toggle Spotlight</button>
+            
+            <div class="color-sliders">
+                <h3>Light Color</h3>
+                <label for="redSlider">Red:</label>
+                <input type="range" min="0" max="100" value="100" class="slider" id="redSlider">
+                
+                <label for="greenSlider">Green:</label>
+                <input type="range" min="0" max="100" value="100" class="slider" id="greenSlider">
+                
+                <label for="blueSlider">Blue:</label>
+                <input type="range" min="0" max="100" value="100" class="slider" id="blueSlider">
+            </div>
+            
+            <h3>Light Position</h3>
+            <input type="range" min="0" max="360" value="0" class="slider" id="lightPosSlider">
+        </div>
+        
+        <div class="instructions">
+            <h3>Camera Controls</h3>
+            <h5>In this world, I tried to recreate my virtual world but with another twist. I took more time animating my buttons, my lighting controls, and my lighting positions. My cursor now works, so you can move the camera if you press down on the cursor and you can zoom our to see my entire world. I also attempted to create a butterfly, however I struggled to get the dimensions and curves correct. I hope you enjoy my world, and feel free to play around with Cissy the Caterpillar, it follows the cursor movement!</h5>
+            <div class="command-list">
+                <p>W - Forward</p>
+                <p>S - Backward</p>
+                <p>D - Move Right</p>
+                <p>A - Move Left</p>
+                <p>Z - Move Down</p>
+                <p>X - Move Up</p>
+                <p>Q - Look Left</p>
+                <p>E - Look Right</p>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="lib/webgl-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <script src="lib/cuon-matrix-cse160.js"></script>
+        <script src="Cube.js"></script>
+        <script src="Camera.js"></script>
+        <script src="asg4.js"></script>
+    </body>
+</html>
